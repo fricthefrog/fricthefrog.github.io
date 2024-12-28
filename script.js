@@ -19,14 +19,16 @@ function copyCa() {
     .writeText(ca)
     .then(() => {
       caTooltip.textContent = "COPIED!";
+    })
+    .catch(() => (caTooltip.textContent = "COPIED!"))
+    .finally(() => {
       setTimeout(() => {
         if (window.innerWidth < 768) {
           caTooltip.style.opacity = 0;
         }
         caTooltip.textContent = "COPY ADDRESS";
       }, 2000);
-    })
-    .catch(() => console.log("Failed!"));
+    });
 }
 
 document.querySelector(".navbar-ca").addEventListener("click", copyCa);
@@ -51,17 +53,26 @@ navBtn.addEventListener("click", toggleNav);
 const beat = document.getElementById("beat");
 const wakeUpLayout = document.getElementById("wake-up-fren");
 const wakeUpBtn = document.getElementById("wake-up-btn");
-const wakeUpVideo = document.getElementById("wake-up-video");
+const sleepingFric = document.querySelector(".wake-up-img.asleep");
+const awakeFric = document.querySelector(".wake-up-img.awake");
 
 let revealing = false;
 
 function wakeUp() {
-  !revealing && wakeUpVideo.play();
+  if (revealing) {
+    return;
+  }
+  sleepingFric.style.display = "none";
+  awakeFric.style.display = "block";
   revealing = true;
+  beat.play();
+  setTimeout(() => {
+    revealSite();
+  }, 500);
 }
 
 wakeUpBtn.addEventListener("click", wakeUp);
-wakeUpVideo.addEventListener("ended", revealSite);
+// wakeUpVideo.addEventListener("ended", revealSite);
 
 function revealSite() {
   wakeUpLayout.style.opacity = "0";
@@ -70,7 +81,6 @@ function revealSite() {
   setTimeout(() => {
     wakeUpLayout.style.display = "none";
   }, 1000);
-  beat.play();
   const rightScrollText = document.querySelectorAll(".scroll-right");
   const leftScrollText = document.querySelectorAll(".scroll-left");
   rightScrollText.forEach((el) => {
@@ -120,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("intersecting");
           btn.classList.add("active");
         } else {
           btn.classList.remove("active");

@@ -63,16 +63,18 @@ body {
   height: auto;
 }
 
-#wake-up-video {
+.wake-up-img {
   height: 50rem;
   width: auto;
   margin-top: -10rem;
   pointer-events: none;
-  box-shadow: none !important;
   border: none;
   outline: none;
   background: transparent;
-  -webkit-box-shadow: none !important;
+}
+
+.wake-up-img.awake {
+  display: none;
 }
 
 #pause,
