@@ -46,6 +46,9 @@
       </div>
       <img src="./images/fric-l.png" class="side-fric left-fric navbar-fric" />
       <div class="navbar-links">
+        <div class="social-icon-wrapper" onClick="scrollToGenerator()">
+          <img src="./images/pfp-generator/icon/icon_1.png" class="social-icon" />
+        </div>
         <a href="https://x.com/fricthefrog" target="_blank" class="social-icon-wrapper">
           <img src="images/x.png" class="social-icon" />
         </a>
@@ -98,6 +101,87 @@
       <div class="phantom-img-wrapper">
         <img src="./images/phantom.png" class="phantom-img" />
       </div>
+
+      <div class="generator" id="generator">
+        <div class="generator-header">
+          <h1 class="generator-title">Fric Generator</h1>
+          <p class="generator-text">Create your unique Fric!</p>
+        </div>
+        <div class="generator-img-container">
+          <img
+            src="./images/pfp-generator/bg/bg1.png"
+            class="generator-img-bg generator-img-el"
+            id="pfp-bg"
+            alt="Custom Fric background"
+          />
+          <img
+            src="./images/pfp-generator/shape/shape.png"
+            class="generator-img-shape generator-img-el"
+            id="pfp-shape"
+            alt="Custom Fric shape"
+          />
+          <img
+            src="./images/pfp-generator/body-colors/color1.png"
+            class="generator-img-color generator-img-el"
+            id="pfp-color"
+            alt="Custom Fric color"
+          />
+          <img
+            src="./images/pfp-generator/mouth/mouth1.png"
+            class="generator-img-mouth generator-img-el"
+            id="pfp-mouth"
+            alt="Custom Fric mouth"
+          />
+          <img
+            src="./images/pfp-generator/eyes/eye1.png"
+            class="generator-img-eyes generator-img-el"
+            id="pfp-eyes"
+            alt="Custom Fric eyes"
+          />
+          <img
+            src="./images/pfp-generator/accessories/design1.png"
+            class="generator-img-accessory generator-img-el"
+            id="pfp-accessory"
+            alt="Custom Fric accessory"
+          />
+        </div>
+        <input
+          type="text"
+          id="name-input"
+          class="generator-name-input"
+          placeholder="Enter your name"
+        />
+        <div class="generator-btns-container">
+          <button class="generator-randomize-btn" onClick="randomizeBtn()">
+            Randomize
+            <img src="./images/pfp-generator/icon/icon_2.png" class="randomize-img" />
+          </button>
+          <button class="generator-download-btn" id="download-pfp">
+            Download <img src="./images/pfp-generator/icon/icon_3.png" class="download-img" />
+          </button>
+        </div>
+
+        <div class="generator-choices-container">
+          <div class="generator-choice-wrapper">
+            <div class="generator-choice-arrow choice-left">&lt;</div>
+            <div class="generator-choice-text" id="color-choice">Color 1</div>
+            <div class="generator-choice-arrow choice-right">&gt;</div>
+          </div>
+
+          <div class="generator-choice-wrapper">
+            <div class="generator-choice-arrow choice-left">&lt;</div>
+            <div class="generator-choice-text" id="eyes-choice">Eyes 1</div>
+            <div class="generator-choice-arrow choice-right">&gt;</div>
+          </div>
+
+          <div class="generator-choice-wrapper">
+            <div class="generator-choice-arrow choice-left">&lt;</div>
+            <div class="generator-choice-text" id="accessory-choice">Accessory 1</div>
+            <div class="generator-choice-arrow choice-right">&gt;</div>
+          </div>
+        </div>
+      </div>
+
       <div class="note-container">
         <p class="note-text">
           This is a meme coin with no intrinsic value or expectation of financial return.

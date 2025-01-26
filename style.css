@@ -234,6 +234,10 @@ body {
   bottom: -110%;
 }
 
+.social-icon-wrapper {
+  cursor: pointer;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -299,6 +303,152 @@ main {
 .phantom-img {
   max-width: 35rem;
   height: auto;
+}
+
+.generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 8rem 0;
+}
+
+.generator-header,
+.generator-img-container,
+.generator-name-input,
+.generator-btns-container {
+  flex-shrink: 0;
+}
+
+.generator-title {
+  font-size: 7rem;
+  font-weight: 500;
+}
+
+.generator-text {
+  font-size: 3rem;
+}
+
+.generator-img-container {
+  position: relative;
+  height: 25rem;
+  width: 25rem;
+  border: 0.5rem solid #000;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.generator-img-bg {
+  height: 100%;
+  width: 100%;
+}
+
+.generator-img-shape,
+.generator-img-mouth,
+.generator-img-color,
+.generator-img-eyes,
+.generator-img-accessory {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30rem;
+  width: auto;
+}
+
+.generator-img-shape,
+.generator-img-color {
+  z-index: 1;
+}
+
+.generator-img-eyes {
+  z-index: 2;
+}
+
+.generator-img-mouth {
+  z-index: 3;
+}
+
+.generator-img-accessory {
+  z-index: 4;
+}
+
+.generator-name-input {
+  width: 25rem;
+  border: 0.5rem solid #000;
+  border-radius: 1.2rem;
+  padding: 0.7rem 2rem;
+  font-size: 2rem;
+  text-align: start;
+}
+
+.generator-name-input::placeholder {
+  color: #bbb;
+}
+
+.generator-btns-container {
+  width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.generator-randomize-btn,
+.generator-download-btn {
+  font-size: 2rem;
+  width: 100%;
+  border: 0.5rem solid #000;
+  border-radius: 1.2rem;
+  padding: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.generator-randomize-btn:hover,
+.generator-download-btn:hover {
+  background-color: #67fc62;
+}
+
+.randomize-img,
+.download-img {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.generator-choices-container {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.generator-choice-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5rem solid #000;
+  border-radius: 1.2rem;
+  padding: 0.7rem;
+}
+
+.generator-choice-text {
+  font-size: 2rem;
+  color: #000;
+}
+
+.generator-choice-arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
 }
 
 .note-text {
